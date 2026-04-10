@@ -17,17 +17,17 @@ The process waits until:
 After exiting the Critical Section, the process sends a RELEASE message.
 
 ## Lamport Clock Rule
-- On send → increment clock
-- On receive → max(local, received) + 1
+- On send → increment clock  
+- On receive → max(local, received) + 1  
 
 ## Safety Property
 No two processes enter the Critical Section simultaneously.
 
 ## Message Complexity
 For N processes:
-- REQUEST: N-1
-- REPLY: N-1
-- RELEASE: N-1
+- REQUEST: N-1  
+- REPLY: N-1  
+- RELEASE: N-1  
 
 Total = 3(N-1)
 
@@ -36,21 +36,3 @@ Total = 3(N-1)
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
-
----
-
-# 📁 7. `report.md` (for PDF)
-
-```markdown
-# Lamport Mutual Exclusion - Report
-
-## Overview
-This project demonstrates Lamport’s Distributed Mutual Exclusion algorithm.
-
-## Key Observations
-- Logical clocks maintain ordering
-- Mutual exclusion is preserved
-- Message complexity grows linearly
-
-## Conclusion
-The simulation verifies correctness and coordination without a central authority.
